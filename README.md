@@ -21,11 +21,11 @@ Para ejecutar el proyecto localmente, seguí estos pasos:
 
 1. Clonar el repositorio:
 
-git clone
+git clone https://github.com/danavelazco94/nido-home-decor.git
 
 2. Ingresar a la carpeta del proyecto:
 
-cd react-app-velazco
+cd nido-home-decor
 
 3. Instalar las dependencias:
 
