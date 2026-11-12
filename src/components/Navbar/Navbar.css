@@ -1,0 +1,31 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background-color: #f7f4ef;
+}
+
+.navbar-logo {
+    width: 65px;
+    height: auto;
+}
+
+.navbar-categories {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-categories a {
+    text-decoration: none;
+    color: #38332e;
+    font-size: 15px;
+}
+
+.navbar-categories a:hover {
+  color: #81715F;
+}

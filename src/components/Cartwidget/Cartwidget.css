@@ -1,0 +1,23 @@
+.cart-widget {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  color: #38332E;
+}
+
+.cart-widget-icon {
+  font-size: 20px;
+}
+
+.cart-widget-counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #81715F;
+  color: #FFFFFF;
+  font-size: 12px;
+}

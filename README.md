@@ -14,6 +14,15 @@ Su objetivo es transmitir tranquilidad, armonía y comodidad a través de objeto
 - JavaScript
 - Vite
 - CSS
+- React Icons 
+
+## Componentes desarrollados
+
+Para organizar la interfaz se crearon los siguientes componentes:
+
+- Navbar: Barra de navegación que contiene el logo de NIDO y las categorías de productos.
+- CartWidget: Componente que muestra el ícono del carrito y un contador de productos.
+- ItemListContainer: Contenedor que recibe un mensaje de bienvenida mediante props y lo muestra en pantalla.
 
 ## Instalación y ejecución
 
