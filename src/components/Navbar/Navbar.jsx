@@ -1,5 +1,5 @@
 import logo from "../../assets/logo.png"
-import Cartwidget from "../Cartwidget/Cartwidget"
+import CartWidget from "../Cartwidget/Cartwidget"
 import "./Navbar.css"
 
 const Navbar = () => {
@@ -14,7 +14,7 @@ const Navbar = () => {
                 <li><a href="#">Decoración</a></li>
             </ul>
 
-            <Cartwidget />
+            <CartWidget />
         </nav>
     )
 }

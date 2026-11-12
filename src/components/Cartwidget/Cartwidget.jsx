@@ -1,7 +1,7 @@
 import { FaShoppingCart } from "react-icons/fa";
-import "./Cartwidget.css"
+import "./CartWidget.css"
 
-const Cartwidget = () => {
+const CartWidget = () => {
   return (
     <div className="cart-widget">
         <FaShoppingCart className="cart-widget-icon"/>
@@ -10,4 +10,4 @@ const Cartwidget = () => {
   )
 }
 
-export default Cartwidget
+export default CartWidget
