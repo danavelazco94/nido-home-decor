@@ -1,0 +1,35 @@
+import ItemCount from "../ItemCount/ItemCount";
+import { Row, Col} from "react-bootstrap";
+import "./ItemDetail.css";
+
+const ItemDetail = ({ product }) => {
+    return (
+        <section className="item-detail">
+            <Row className="align-items-center g-5">
+                <Col md={6}>
+                    <img
+                        src={product.img}
+                        alt={product.name}
+                        className="item-detail-img"
+                    />
+                </Col>
+
+                <Col md={6}>
+                    <p>{product.category}</p>
+
+                    <h2>{product.name}</h2>
+
+                    <h3>${product.price}</h3>
+
+                    <p>{product.description}</p>
+
+                    <p>Stock disponible: {product.stock}</p>
+
+                    <ItemCount stock={product.stock} />
+                </Col>
+            </Row>
+        </section>
+    );
+};
+
+export default ItemDetail;

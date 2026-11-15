@@ -1,5 +1,5 @@
 import { FaShoppingCart } from "react-icons/fa";
-import "./CartWidget.css"
+import "./CartWidget.css";
 
 const CartWidget = () => {
   return (
@@ -7,7 +7,7 @@ const CartWidget = () => {
         <FaShoppingCart className="cart-widget-icon"/>
         <span className="cart-widget-counter">0</span>
     </div>
-  )
-}
+  );
+};
 
-export default CartWidget
+export default CartWidget;

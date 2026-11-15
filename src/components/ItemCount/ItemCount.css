@@ -1,0 +1,35 @@
+.item-count {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.item-count-btn {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #8b735b;
+    background-color: transparent;
+    color: #8b735b;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.item-count-btn:hover:not(:disabled) {
+    background-color: #8b735b;
+    color: white;
+}
+
+.item-count-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.item-count-number {
+    font-size: 18px;
+    color: #4b463e;
+    min-width: 15px;
+    text-align: center;
+}

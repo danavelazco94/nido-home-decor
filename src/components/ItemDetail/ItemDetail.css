@@ -1,0 +1,28 @@
+.item-detail {
+    padding: 60px 8%;
+    background-color: #faf8f4;
+}
+
+.item-detail-img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.item-detail h2 {
+    font-size: 2.2rem;
+    color: #4b463e;
+    margin-bottom: 20px;
+}
+
+.item-detail h3 {
+    font-size: 1.5rem;
+    color: #8b735b;
+    margin-bottom: 20px;
+}
+
+.item-detail p {
+    color: #777168;
+    line-height: 1.7;
+}
