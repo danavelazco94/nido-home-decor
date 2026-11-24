@@ -29,3 +29,8 @@
 .navbar-categories a:hover {
   color: #81715F;
 }
+
+.navbar-categories a.active {
+    color: #81715F;
+    font-weight: 600;
+}

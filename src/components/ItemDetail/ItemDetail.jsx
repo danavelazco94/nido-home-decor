@@ -1,12 +1,12 @@
 import ItemCount from "../ItemCount/ItemCount";
-import { Row, Col} from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import "./ItemDetail.css";
 
 const ItemDetail = ({ product }) => {
     return (
         <section className="item-detail">
             <Row className="align-items-center g-5">
-                <Col md={6}>
+                <Col xs={12} md={6}>
                     <img
                         src={product.img}
                         alt={product.name}
@@ -14,7 +14,7 @@ const ItemDetail = ({ product }) => {
                     />
                 </Col>
 
-                <Col md={6}>
+                <Col xs={12} md={6}>
                     <p>{product.category}</p>
 
                     <h2>{product.name}</h2>

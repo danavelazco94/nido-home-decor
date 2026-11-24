@@ -19,41 +19,55 @@ Su objetivo es transmitir tranquilidad, armonía y comodidad a través de objeto
 - React Icons
 - React-Bootstrap
 - Bootstrap
+- React Router DOM
 
 ## Componentes desarrollados
 
 Para organizar la interfaz se crearon los siguientes componentes:
 
-- **Navbar:** Barra de navegación que contiene el logo de NIDO y las categorías de productos.
-- **CartWidget:** Componente que muestra el ícono del carrito y un contador de productos.
-- **ItemListContainer:** Contenedor que recibe un mensaje de bienvenida mediante props y gestiona la carga de productos.
-- **ItemList:** Recibe los productos mediante props y utiliza `.map()` para recorrerlos y renderizar una tarjeta por cada uno.
-- **Item:** Componente encargado de mostrar individualmente la información de cada producto mediante una tarjeta de React-Bootstrap.
-- **ItemDetailContainer:** Contenedor que obtiene un producto específico mediante su ID y gestiona los estados de carga y error.
-- **ItemDetail:** Componente encargado de mostrar el detalle completo de un producto, incluyendo imagen, nombre, precio, categoría, descripción y stock.
-- **ItemCount:** Contador de unidades que permite aumentar o disminuir la cantidad seleccionada, respetando el stock disponible.
+-**Navbar:** Barra de navegación que contiene el logo de NIDO, las categorías de productos y el CartWidget.
+-**CartWidget:** Componente que muestra el ícono del carrito y un contador de productos.
+-**ItemListContainer:** Contenedor que recibe un mensaje de bienvenida mediante props y gestiona la carga y filtrado de productos según la categoría seleccionada.
+-**ItemList:** Recibe los productos mediante props y utiliza .map() para recorrerlos y renderizar una tarjeta por cada uno.
+-**Item:** Componente encargado de mostrar individualmente la información de cada producto mediante una tarjeta de React-Bootstrap. Incluye un enlace para acceder al detalle del producto.
+-**ItemDetailContainer:** Contenedor que obtiene un producto específico mediante su ID y gestiona los estados de carga y error.
+-**ItemDetail:** Componente encargado de mostrar el detalle completo de un producto, incluyendo imagen, nombre, precio, categoría, descripción y stock.
+-**ItemCount:** Contador de unidades que permite aumentar o disminuir la cantidad seleccionada, respetando el stock disponible.
+-**MainLayout:** Componente que establece una estructura compartida para las distintas páginas, incluyendo Navbar, Footer y Outlet.
+-**Footer:** Pie de página que contiene la identidad de la marca y los derechos reservados.
+-**Error:** Componente que muestra una página de error 404 y permite regresar al inicio.
 
 ## Carga de productos
-
 Los productos se encuentran definidos en un archivo local llamado `asyncMock.js`, dentro de la carpeta `src/mocks`.
-
 La carga de datos se simula mediante una función llamada `getProducts()`, que devuelve una Promise y utiliza `setTimeout` para establecer un retraso de 2 segundos antes de entregar el listado de productos.
-
 En `ItemListContainer` se utilizan los Hooks `useState` y `useEffect`, junto con `async/await`, para obtener los productos al montar el componente y almacenarlos en el estado `items`.
-
 Posteriormente, `ItemList` recibe el listado y utiliza `.map()` para generar dinámicamente las tarjetas de cada producto.
 
 ## Detalle de producto
-
 Se implementó una función llamada `getProductById(productId)` en la carpeta `src/services`, que permite buscar un producto específico a partir de su ID.
-
 Esta función devuelve una Promise, utiliza `setTimeout` para simular un tiempo de espera y `.find()` para localizar el producto dentro del array.
-
 Si encuentra el producto, resuelve la promesa. En caso contrario, la rechaza mostrando un mensaje de error.
-
 `ItemDetailContainer` utiliza `useEffect` y `useState` para ejecutar la búsqueda, almacenar el producto y gestionar los estados de carga y error.
-
 Finalmente, `ItemDetail` recibe la información mediante props y muestra los datos del producto junto con el componente `ItemCount`.
+
+## Navegación con React Router
+
+Se implementó React Router DOM para gestionar la navegación entre las distintas páginas de la tienda sin necesidad de recargar el sitio.
+
+- Las rutas configuradas son:
+
+- /: Página principal con el catálogo completo.
+
+- /category/:type: Permite acceder a las distintas categorías de productos.
+
+- /item/:id: Muestra el detalle individual de un producto según su ID.
+
+- /error: Página de error 404.
+
+- *: Ruta que captura direcciones inexistentes y muestra la página de error.
+
+Se utilizaron los componentes BrowserRouter, Routes y Route para configurar las rutas, junto con Link y NavLink para realizar la navegación.
+Además, se implementó MainLayout para mantener el Navbar y el Footer visibles en todas las páginas.
 
 ## Instalación y ejecución
 
@@ -61,19 +75,19 @@ Para ejecutar el proyecto localmente, seguí estos pasos:
 
 1. Clonar el repositorio:
 
-   git clone https://github.com/danavelazco94/nido-home-decor.git
+git clone https://github.com/danavelazco94/nido-home-decor.git
 
 2. Ingresar a la carpeta del proyecto:
 
-   cd nido-home-decor
+cd nido-home-decor
 
 3. Instalar las dependencias:
 
-   npm install
+npm install
 
 4. Iniciar el servidor de desarrollo:
 
-   npm run dev
+npm run dev
 
 ## Estado del proyecto
 

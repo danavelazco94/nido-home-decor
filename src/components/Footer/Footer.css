@@ -1,0 +1,23 @@
+.footer {
+    background-color: #e9e5dc;
+    padding: 40px 20px 20px;
+    text-align: center;
+    color: #4b463e;
+}
+
+.footer h3 {
+    font-size: 28px;
+    letter-spacing: 4px;
+    margin-bottom: 8px;
+}
+
+.footer p {
+    color: #777168;
+}
+
+.footer-bottom {
+    border-top: 1px solid #d2ccc0;
+    padding-top: 15px;
+    margin-top: 25px;
+    font-size: 13px;
+}
