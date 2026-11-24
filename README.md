@@ -25,17 +25,17 @@ Su objetivo es transmitir tranquilidad, armonía y comodidad a través de objeto
 
 Para organizar la interfaz se crearon los siguientes componentes:
 
--**Navbar:** Barra de navegación que contiene el logo de NIDO, las categorías de productos y el CartWidget.
+- **Navbar:** Barra de navegación que contiene el logo de NIDO, las categorías de productos y el CartWidget.
 -**CartWidget:** Componente que muestra el ícono del carrito y un contador de productos.
--**ItemListContainer:** Contenedor que recibe un mensaje de bienvenida mediante props y gestiona la carga y filtrado de productos según la categoría seleccionada.
--**ItemList:** Recibe los productos mediante props y utiliza .map() para recorrerlos y renderizar una tarjeta por cada uno.
--**Item:** Componente encargado de mostrar individualmente la información de cada producto mediante una tarjeta de React-Bootstrap. Incluye un enlace para acceder al detalle del producto.
--**ItemDetailContainer:** Contenedor que obtiene un producto específico mediante su ID y gestiona los estados de carga y error.
--**ItemDetail:** Componente encargado de mostrar el detalle completo de un producto, incluyendo imagen, nombre, precio, categoría, descripción y stock.
--**ItemCount:** Contador de unidades que permite aumentar o disminuir la cantidad seleccionada, respetando el stock disponible.
--**MainLayout:** Componente que establece una estructura compartida para las distintas páginas, incluyendo Navbar, Footer y Outlet.
--**Footer:** Pie de página que contiene la identidad de la marca y los derechos reservados.
--**Error:** Componente que muestra una página de error 404 y permite regresar al inicio.
+- **ItemListContainer:** Contenedor que recibe un mensaje de bienvenida mediante props y gestiona la carga y filtrado de productos según la categoría seleccionada.
+- **ItemList:** Recibe los productos mediante props y utiliza .map() para recorrerlos y renderizar una tarjeta por cada uno.
+- **Item:** Componente encargado de mostrar individualmente la información de cada producto mediante una tarjeta de React-Bootstrap. Incluye un enlace para acceder al detalle del producto.
+- **ItemDetailContainer:** Contenedor que obtiene un producto específico mediante su ID y gestiona los estados de carga y error.
+- **ItemDetail:** Componente encargado de mostrar el detalle completo de un producto, incluyendo imagen, nombre, precio, categoría, descripción y stock.
+- **ItemCount:** Contador de unidades que permite aumentar o disminuir la cantidad seleccionada, respetando el stock disponible.
+- **MainLayout:** Componente que establece una estructura compartida para las distintas páginas, incluyendo Navbar, Footer y Outlet.
+- **Footer:** Pie de página que contiene la identidad de la marca y los derechos reservados.
+- **Error:** Componente que muestra una página de error 404 y permite regresar al inicio.
 
 ## Carga de productos
 Los productos se encuentran definidos en un archivo local llamado `asyncMock.js`, dentro de la carpeta `src/mocks`.
