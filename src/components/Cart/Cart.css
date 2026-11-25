@@ -1,0 +1,121 @@
+
+.cart {
+    width: 100%;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.cart h1 {
+    color: #454936;
+    margin-bottom: 30px;
+}
+
+.cart-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.cart-empty-img {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    object-fit: contain;
+}
+
+.cart-empty-link {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #777957;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.cart-empty-link:hover {
+    background-color: #5f6245;
+    color: #fff;
+}
+
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    max-width: 800px;
+    margin: 0 auto 25px;
+    padding: 20px;
+    border-bottom: 1px solid #e5e5dc;
+    text-align: left;
+}
+
+.cart-item-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-info h3 {
+    color: #454936;
+    margin-bottom: 10px;
+}
+
+.cart-item-info p {
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.cart-item-remove {
+    border: none;
+    background: transparent;
+    color: #a15e52;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.cart-item-remove:hover {
+    color: #783d34;
+}
+
+
+.cart-summary {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #f5f3ed;
+    border-radius: 12px;
+}
+
+.cart-summary h2 {
+    color: #454936;
+    margin-bottom: 20px;
+}
+
+.cart-summary-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.cart-summary-buttons button {
+    padding: 11px 25px;
+    border: none;
+    border-radius: 25px;
+    background-color: #777957;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cart-summary-buttons button:hover {
+    background-color: #5f6245;
+}

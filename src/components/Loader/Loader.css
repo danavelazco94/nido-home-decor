@@ -1,0 +1,20 @@
+.loading-container {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.loading-container .spinner-border {
+    color: #777957;
+    width: 45px;
+    height: 45px;
+}
+
+.loading-container p {
+    color: #777957;
+    font-size: 16px;
+    margin: 0;
+}

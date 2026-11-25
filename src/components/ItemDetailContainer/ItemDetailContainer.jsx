@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getProductById } from "../../services/getProductById";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams, useNavigate } from "react-router-dom";
+import Loader from "../Loader/Loader";
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState(null);
@@ -23,7 +24,7 @@ const ItemDetailContainer = () => {
   }, [id, navigate]);
 
   if (loading) {
-    return <p>Cargando Producto...</p>;
+    return <Loader message="Cargando producto..." />;
   }
 
   return (

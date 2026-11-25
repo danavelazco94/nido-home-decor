@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import "./ItemListContainer.css";
 import { getProducts } from "../../mocks/asyncMock";
 import ItemList from "../ItemList/ItemList";
+import Loader from "../Loader/Loader";
 
 const categories = {
   ceramica: "Cerámica",
@@ -17,12 +18,14 @@ const ItemListContainer = ({ greeting }) => {
   const [error, setError] = useState(null);
   const { type } = useParams();
   const categoryName = categories[type];
-  let filteredItems;
-  let title;
   let content;
+
 
   useEffect(() => {
     const fetchProducts = async () => {
+      setLoading(true);
+      setError(null);
+
       try {
         const products = await getProducts();
         setItems(products);
@@ -35,44 +38,37 @@ const ItemListContainer = ({ greeting }) => {
     };
 
     fetchProducts();
-  }, []);
+  }, [type]);
 
-  if (type) {
-    filteredItems = items.filter(
-      (product) => product.category === categoryName
-    );
+
+  const filteredItems = type
+    ? items.filter((product) => product.category === categoryName)
+    : items;
+
+  const title = type
+    ? categoryName || "Categoría no encontrada"
+    : greeting;
+
+
+  if (loading) {
+    content = <Loader message="Cargando productos..." />;
+  } else if (error) {
+    content = <p>{error}</p>;
   } else {
-    filteredItems = items;
-  }
-
-  if (type) {
-    if (categoryName) {
-      title = categoryName;
-    } else {
-      title = "Categoría no encontrada";
-    }
-  } else {
-    title = greeting;
-  }
-
-  if (loading) return <p>Cargando productos...</p>;
-
-  if (error) return <p>{error}</p>;
-
-  if (type && !categoryName) {
-    return <p>Categoría no encontrada.</p>;
-  }
-
-  if (filteredItems.length > 0) {
-    content = <ItemList items={filteredItems} />;
-  } else {
-    content = <p>No hay productos en esta categoría.</p>;
+    content = filteredItems.length > 0
+      ? <ItemList items={filteredItems} />
+      : <p>No hay productos en esta categoría.</p>;
   }
 
   return (
     <section className="item-list-container">
       <h1>{title}</h1>
-      {content}
+
+      {type && !categoryName ? (
+        <p>Categoría no encontrada.</p>
+      ) : (
+        content
+      )}
     </section>
   );
 };

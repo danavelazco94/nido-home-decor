@@ -17,7 +17,7 @@ Su objetivo es transmitir tranquilidad, armonía y comodidad a través de objeto
 - Vite
 - CSS
 - React Icons
-- React-Bootstrap
+- React-Bootstra
 - Bootstrap
 - React Router DOM
 
@@ -50,21 +50,45 @@ Si encuentra el producto, resuelve la promesa. En caso contrario, la rechaza mos
 `ItemDetailContainer` utiliza `useEffect` y `useState` para ejecutar la búsqueda, almacenar el producto y gestionar los estados de carga y error.
 Finalmente, `ItemDetail` recibe la información mediante props y muestra los datos del producto junto con el componente `ItemCount`.
 
+## Carrito de compras
+
+Se implementó un sistema de carrito utilizando Context API para compartir y administrar su estado entre los distintos componentes de la aplicación.
+
+Se crearon dos archivos:
+
+- **CartContext:** crea y exporta el contexto del carrito.
+- **CartProvider:** administra el estado y proporciona las funciones necesarias para gestionar los productos.
+
+Las funcionalidades implementadas son:
+
+- addItem(item, quantity): agrega un producto al carrito. Si el producto ya existe, acumula la cantidad seleccionada sin duplicarlo y verifica que no se supere el stock disponible.
+- removeItem(itemId): elimina un producto del carrito según su ID.
+- clear(): vacía completamente el carrito.
+- isInCart(id): permite comprobar si un producto ya se encuentra agregado.
+- totalItems: calcula la cantidad total de unidades agregadas al carrito.
+
+Para actualizar el estado se utilizan actualizaciones inmutables mediante el operador spread y métodos como `.find(), .map(), .filter(), .some()` y `.reduce().`
+CartProvider envuelve la aplicación para que los componentes puedan acceder al contexto mediante el Hook `useContext.`
+El carrito permite visualizar los productos agregados, sus cantidades, precios unitarios, subtotales y el total de la compra.
+Además, se puede eliminar cada producto individualmente o vaciar el carrito por completo.
+
 ## Navegación con React Router
 
 Se implementó React Router DOM para gestionar la navegación entre las distintas páginas de la tienda sin necesidad de recargar el sitio.
 
-- Las rutas configuradas son:
+Las rutas configuradas son:
 
-- /: Página principal con el catálogo completo.
+- /: página principal con el catálogo completo.
 
-- /category/:type: Permite acceder a las distintas categorías de productos.
+- /category/:type: permite acceder a las distintas categorías de productos.
 
-- /item/:id: Muestra el detalle individual de un producto según su ID.
+- /item/:id: muestra el detalle individual de un producto según su ID.
 
-- /error: Página de error 404.
+- /cart: muestra el carrito de compras.
 
-- *: Ruta que captura direcciones inexistentes y muestra la página de error.
+- /error: página de error 404.
+
+- *: ruta que captura direcciones inexistentes y muestra la página de error.
 
 Se utilizaron los componentes BrowserRouter, Routes y Route para configurar las rutas, junto con Link y NavLink para realizar la navegación.
 Además, se implementó MainLayout para mantener el Navbar y el Footer visibles en todas las páginas.
@@ -92,3 +116,5 @@ npm run dev
 ## Estado del proyecto
 
 En desarrollo. Proyecto realizado como trabajo final del curso de React.
+
+Actualmente cuenta con catálogo de productos, navegación por categorías, detalle individual y un carrito de compras funcional.

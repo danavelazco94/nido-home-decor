@@ -1,15 +1,15 @@
 .item-list-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 50px 20px;
-    text-align: center;
-    gap: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  text-align: center;
+  gap: 30px;
 }
 
 .item-list-container h1 {
-    color: #38332e;
-    font-size: 28px;
-    font-weight: 500;
+  color: #38332e;
+  font-size: 28px;
+  font-weight: 500;
 }
