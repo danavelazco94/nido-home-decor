@@ -5,23 +5,40 @@ import { useParams, useNavigate } from "react-router-dom";
 import Loader from "../Loader/Loader";
 
 const ItemDetailContainer = () => {
-  const [product, setProduct] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [productData, setProductData] = useState({
+    id: null,
+    product: null,
+  });
+
   const { id } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
+    let isMounted = true;
+
     getProductById(id)
       .then((response) => {
-        setProduct(response);
+        if (isMounted) {
+          setProductData({
+            id: id,
+            product: response,
+          });
+        }
       })
-      .catch(() => {
-        navigate("/error");
-      })
-      .finally(() => {
-        setLoading(false);
+      .catch((error) => {
+        console.error("Error al cargar el producto:", error);
+
+        if (isMounted) {
+          navigate("/error");
+        }
       });
+
+    return () => {
+      isMounted = false;
+    };
   }, [id, navigate]);
+
+  const loading = productData.id !== id;
 
   if (loading) {
     return <Loader message="Cargando producto..." />;
@@ -29,7 +46,7 @@ const ItemDetailContainer = () => {
 
   return (
     <div>
-      <ItemDetail product={product} />
+      <ItemDetail product={productData.product} />
     </div>
   );
 };

@@ -5,29 +5,31 @@ export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
   const addItem = (item, quantity) => {
-    setCart((prevCart) => {
-      const productInCart = prevCart.find(
-        (product) => product.id === item.id
-      );
+    const productInCart = cart.find(
+      (product) => product.id === item.id
+    );
 
-      const currentQuantity = productInCart
-        ? productInCart.quantity
-        : 0;
+    const currentQuantity = productInCart
+      ? productInCart.quantity
+      : 0;
 
-      if (currentQuantity + quantity > item.stock) {
-        return prevCart;
-      }
+    if (currentQuantity + quantity > item.stock) {
+      return false;
+    }
 
-      if (productInCart) {
-        return prevCart.map((product) =>
+    if (productInCart) {
+      setCart((prevCart) =>
+        prevCart.map((product) =>
           product.id === item.id
             ? { ...product, quantity: product.quantity + quantity }
             : product
-        );
-      }
+        )
+      );
+    } else {
+      setCart((prevCart) => [...prevCart, { ...item, quantity }]);
+    }
 
-      return [...prevCart, { ...item, quantity }];
-    });
+    return true;
   };
 
   const removeItem = (itemId) => {

@@ -1,0 +1,136 @@
+.checkout {
+  min-height: 70vh;
+  padding: 60px 20px;
+  background-color: #f7f4ef;
+}
+
+.checkout-form-container,
+.checkout-success,
+.checkout-empty {
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+}
+
+.checkout-form-container h1,
+.checkout-success h1 {
+  color: #81715f;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.checkout-form-container > p {
+  color: #777;
+  margin-bottom: 30px;
+}
+
+.checkout-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.checkout-field label {
+  margin-bottom: 8px;
+  color: #5f5a50;
+  font-weight: 500;
+}
+
+.checkout-field input {
+  padding: 12px 14px;
+  border: 1px solid #e0ddd5;
+  border-radius: 6px;
+  background-color: #faf8f4;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.checkout-field input:focus {
+  border-color: #8b8e70;
+}
+
+.checkout-form-container h3 {
+  margin: 25px 0;
+  color: #81715f;
+  font-size: 22px;
+}
+
+.checkout-error {
+  padding: 12px;
+  border-radius: 6px;
+  background-color: #f8e8e5;
+  color: #a34436;
+}
+
+.checkout-success,
+.checkout-empty {
+  text-align: center;
+}
+
+.checkout-success p {
+  margin: 20px 0;
+  color: #666;
+}
+
+.checkout-success a,
+.checkout-empty a {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 24px;
+  border-radius: 6px;
+  background-color: #8b8e70;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.checkout-success a:hover,
+.checkout-empty a:hover {
+  background-color: #73765b;
+}
+
+@media (max-width: 576px) {
+  .checkout {
+    padding: 35px 15px;
+  }
+
+  .checkout-form-container,
+  .checkout-success,
+  .checkout-empty {
+    padding: 25px 20px;
+  }
+
+  .checkout-form-container h1,
+  .checkout-success h1 {
+    font-size: 24px;
+  }
+}
+
+button.checkout-submit {
+    display: block;
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 6px;
+    background-color: #8b8e70;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    appearance: none;
+}
+
+button.checkout-submit:hover {
+    background-color: #73765b;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+button.checkout-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}

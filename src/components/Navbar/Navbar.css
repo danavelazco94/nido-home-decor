@@ -34,3 +34,41 @@
     color: #81715F;
     font-weight: 600;
 }
+
+
+.navbar-auth {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.navbar-auth a {
+    text-decoration: none;
+    color: #38332e;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.navbar-auth a:hover {
+    color: #81715F;
+}
+
+.navbar-auth span {
+    color: #81715F;
+    font-size: 13px;
+}
+
+.navbar-auth button {
+    border: none;
+    background-color: #8b8e70;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.3s;
+}
+
+.navbar-auth button:hover {
+    background-color: #81715F;
+}

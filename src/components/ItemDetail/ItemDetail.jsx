@@ -1,14 +1,24 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext";
 import ItemCount from "../ItemCount/ItemCount";
 import { Row, Col } from "react-bootstrap";
 import "./ItemDetail.css";
+import formatPrice from "../../utils/formatPrice";
 
 const ItemDetail = ({ product }) => {
     const { addItem } = useContext(CartContext);
+    const [message, setMessage] = useState("");
 
     const handleAdd = (quantity) => {
-        addItem(product, quantity);
+        const added = addItem(product, quantity);
+
+        if (added) {
+            setMessage("¡Producto agregado al carrito!");
+        } else {
+            setMessage("No hay stock suficiente para agregar esa cantidad.");
+        }
+
+        return added;
     };
 
     return (
@@ -25,7 +35,7 @@ const ItemDetail = ({ product }) => {
                 <Col xs={12} md={6}>
                     <p>{product.category}</p>
                     <h2>{product.name}</h2>
-                    <h3>${product.price}</h3>
+                    <h3>${formatPrice(product.price)}</h3>
                     <p>{product.description}</p>
                     <p>Stock disponible: {product.stock}</p>
 
@@ -33,6 +43,8 @@ const ItemDetail = ({ product }) => {
                         stock={product.stock}
                         onAdd={handleAdd}
                     />
+
+                    {message && <p>{message}</p>}
                 </Col>
             </Row>
         </section>

@@ -1,15 +1,17 @@
-import { products } from "../mocks/asyncMock";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../firebase/config";
 
 export const getProductById = (productId) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const product = products.find((product) => product.id === productId);
+  const productRef = doc(db, "products", productId);
 
-      if (product) {
-        resolve(product);
-      } else {
-        reject(new Error("Producto no encontrado"));
-      }
-    }, 500);
+  return getDoc(productRef).then((res) => {
+    if (res.exists()) {
+      return {
+        id: res.id,
+        ...res.data(),
+      };
+    } else {
+      throw new Error("Producto no encontrado");
+    }
   });
 };

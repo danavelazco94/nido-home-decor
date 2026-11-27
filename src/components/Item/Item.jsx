@@ -1,5 +1,6 @@
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import formatPrice from "../../utils/formatPrice";
 
 const Item = ({ product }) => {
   return (
@@ -19,7 +20,7 @@ const Item = ({ product }) => {
         </Card.Text>
 
         <Card.Text className="fw-bold mt-auto">
-          ${product.price}
+          ${formatPrice(product.price)}
         </Card.Text>
 
         <Link className="btn btn-dark" to={`/item/${product.id}`}>Ver detalle</Link>

@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import "./Cart.css";
+import formatPrice from "../../utils/formatPrice";
 
 const Cart = () => {
   const { cart, removeItem, clear } = useContext(CartContext);
@@ -39,10 +40,10 @@ const Cart = () => {
 
               <div className="cart-item-info">
                 <h3>{product.name}</h3>
-                <p>Precio: ${product.price}</p>
+                <p>Precio: ${formatPrice(product.price)}</p>
                 <p>Cantidad: {product.quantity}</p>
                 <p>
-                  Subtotal: ${product.price * product.quantity}
+                  Subtotal: ${formatPrice(product.price * product.quantity)}
                 </p>
               </div>
 
@@ -56,16 +57,16 @@ const Cart = () => {
           ))}
 
           <div className="cart-summary">
-            <h2>Total de la compra: ${total}</h2>
+            <h2>Total de la compra: ${formatPrice(total)}</h2>
 
             <div className="cart-summary-buttons">
               <button onClick={clear}>
                 Vaciar carrito
               </button>
 
-              <button onClick={() => alert("¡Gracias por tu compra!")}>
+              <Link to="/checkout" className="checkout-button">
                 Finalizar compra
-              </button>
+              </Link>
             </div>
           </div>
         </div>

@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./ItemCount.css";
 
-
 const ItemCount = ({ stock, onAdd }) => {
     const [count, setCount] = useState(1);
     const [added, setAdded] = useState(false);
@@ -19,10 +18,19 @@ const ItemCount = ({ stock, onAdd }) => {
         }
     };
 
+    const handleClick = () => {
+        const result = onAdd(count);
+
+        if (result) {
+            setAdded(true);
+        }
+    };
 
     return (
         <div className="item-count">
-            {added ? (
+            {stock === 0 ? (
+                <p>Producto sin stock.</p>
+            ) : added ? (
                 <div className="item-count-actions">
                     <button onClick={() => setAdded(false)}>
                         Seguir comprando
@@ -54,10 +62,8 @@ const ItemCount = ({ stock, onAdd }) => {
 
                     <button
                         className="item-count-add"
-                        onClick={() => {
-                            onAdd(count);
-                            setAdded(true);
-                        }}
+                        onClick={handleClick}
+                        disabled={stock === 0}
                     >
                         Agregar al carrito
                     </button>
@@ -65,7 +71,6 @@ const ItemCount = ({ stock, onAdd }) => {
             )}
         </div>
     );
-
 };
 
 export default ItemCount;
